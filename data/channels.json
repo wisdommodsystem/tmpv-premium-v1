@@ -1,0 +1,29 @@
+{
+  "1498745994618081312": {
+    "ownerId": "1463254467725099028",
+    "textChannelId": "1498745998019657951",
+    "chatLocked": false,
+    "settings": {
+      "status": "**.v help/panel**  <a:FZ_red_cross:1360451122807963770>"
+    },
+    "isPremium": {
+      "_id": "69f0dd58a32d7ef922a0fb6d",
+      "userId": "1463254467725099028",
+      "addedAt": "2026-04-28T16:36:51.876Z",
+      "addedBy": "1329180315314556951",
+      "expiresAt": "2026-05-01T16:36:51.876Z",
+      "isActive": true,
+      "offer": "diamond",
+      "reason": "Admin Granted"
+    }
+  },
+  "1498746120329756745": {
+    "ownerId": "1329180315314556951",
+    "textChannelId": null,
+    "chatLocked": false,
+    "settings": {
+      "status": "**.v help/panel**  <a:FZ_red_cross:1360451122807963770>"
+    },
+    "isPremium": false
+  }
+}
