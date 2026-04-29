@@ -1,6 +1,31 @@
 console.log('--- BOT STARTING ---');
 require('dotenv').config();
 
+// ── Render/Hosting keep-alive HTTP server ────────────────────────────────────
+// Some hosts (e.g. Render) expect a process to bind to PORT.
+// This tiny server keeps the service "healthy" without affecting the bot logic.
+(() => {
+  const port = Number(process.env.PORT || 0);
+  if (!port) {
+    console.log('==> No open ports detected, continuing to scan...');
+    return;
+  }
+
+  try {
+    const http = require('http');
+    http
+      .createServer((req, res) => {
+        res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+        res.end('OK');
+      })
+      .listen(port, '0.0.0.0', () => {
+        console.log(`==> Listening on PORT ${port}`);
+      });
+  } catch (e) {
+    console.log('==> No open ports detected, continuing to scan...');
+  }
+})();
+
 // --- startup encryption backend check (no manual loading) ---
 let detectedBackend = null;
 try {
